@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>News</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding >
+  <ion-searchbar animated (ionInput)="getSearchData($event)"></ion-searchbar>
+  <!--<ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select value="general" okText="Okay" cancelText="Dismiss" (ionChange)="categorical($value)">
+      <ion-select-option value="general">general</ion-select-option>
+      <ion-select-option value="business">business</ion-select-option>
+      <ion-select-option value="technology">technology</ion-select-option>
+      <ion-select-option value="sports">sports</ion-select-option>
+      <ion-select-option value="health">health</ion-select-option>
+      <ion-select-option value="entertainment">entertainment</ion-select-option>
+      <ion-select-option value="science">science</ion-select-option>
+    </ion-select>
+  </ion-item>-->
+  <br>
+  <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsSinglePage(article)">
+    <ion-card-header>
+      <ion-card-title>{{article.title}}</ion-card-title>
+    </ion-card-header> 
+    
+  </ion-card>
+</ion-content>
